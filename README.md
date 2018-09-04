@@ -421,3 +421,11 @@ After we find the reflog entry we can do `git reset` or `git cherry-pick` as exa
 ## Finding a bad commit
 
 Git has very intersting feature that allows you to find a bad commit automatically in a given range the command is simple `git bisect start head head~10` here we are saying that the head is the bad commit and we ask git to check from the last 10 commits to find when the problem start happen, then we instruct git on how to find the bad commit `git bisect run npm start` in this example we run node start command that may exit with `status` 1 if it is a bad commit or `status 0` if it is a good commit, git will do its own thing and get back to us with the first bad commit pointing to the problem
+
+
+## Some common commands:
+
+- To remove all branches except master use 
+``` 
+git branch | grep -ve " master$" | xargs git branch -D
+```
